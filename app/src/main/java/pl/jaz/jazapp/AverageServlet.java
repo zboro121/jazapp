@@ -28,10 +28,7 @@ public class AverageServlet extends HttpServlet  {
 
             BigDecimal bd = new BigDecimal(Float.toString(avg));
             bd = bd.setScale(2, RoundingMode.HALF_UP);
-
             String result = bd.toString();
-            writer.println("Average equals: " + result);
-
 
             String finalResult = zeroChecker(result);
             writer.println("Average equals: " + finalResult);

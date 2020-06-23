@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20200601_init
+      author: Paweł Zborowski
+      sqlFile:
+        relativeToChangelogFile: true
+        splitStatements: false
+        path: 20200601_init.sql

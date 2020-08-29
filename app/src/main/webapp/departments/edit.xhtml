@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xml:lang="pl" lang="pl">
+<h:head>
+    <title>Create department</title>
+</h:head>
+<h:body>
+    <ui:composition template = "../layout/layout.xhtml">
+        <ui:define name="content">
+            <h:form styleClass="form-base">
+                <div class="form-group">
+                    <h:inputText id="name" styleClass="form-control" a:placeholder="Name" value="#{departmentRequest.name}"/>
+                    <h:messages for="name" showSummary="true"/>
+                </div>
+                <h:commandButton id="save" styleClass="btn btn-primary" value="Create" action="#{departmentController.Create(departmentRequest)}">
+                    <f:param name="departmentId" value="#{departmentRequest.id}" />
+                </h:commandButton>
+                <br/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+>
+<body>
+<ui:composition>
+    <div class="row mb-5">
+        <a class="navbar-brand" href="#">JAZ</a>
+        <ul class="mr-auto list-inline pt-2">
+            <li class="nav-item mr-4">
+                <h:link value="Auctions" outcome="/index"/>
+            </li>
+            <li class="nav-item mr-4">
+                <h:link value="My auctions" outcome="/auctions/mine"/>
+            </li>
+            <li class="nav-item mr-4 ">
+                <h:link value="Create auction" outcome="/auctions/edit"/>
+            </li>
+            <li class="nav-item mr-4 ">
+                <h:link value="Create department" outcome="/departments/edit"/>
+            </li>
+            <li class="nav-item mr-4 ">
+                <h:link value="Departments List" outcome="/departments/list"/>
+            </li>
+            <li class="nav-item mr-4 ">
+                <h:link value="Create category" outcome="/categories/edit"/>
+            </li>
+            <li class="nav-item mr-4 ">
+                <h:link value="Categories List" outcome="/categories/list"/>
+            </li>
+        </ul>
+    </div>
+</ui:composition>
+</body>
+</html>

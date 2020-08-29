@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xml:lang="pl" lang="pl">
+<h:head>
+    <title>Create auction</title>
+</h:head>
+<h:body>
+    <ui:composition template = "../layout/layout.xhtml">
+        <ui:define name="content">
+
+            <h:form styleClass="form-base">
+                <div class="form-group">
+                    <h:inputText id="title" styleClass="form-control" a:placeholder="Title" value="#{auctionRequest.title}"/>
+                    <h:messages for="title" showSummary="true"/>
+                </div>
+                <div class="form-group">
+                    <h:inputTextarea id="description" cols="14" rows="4" style="width:150px" value="#{auctionRequest.description}"/>
+                    <h:messages for="description" showSummary="true"/>
+                </div>
+                <div class="form-group">
+                    <h:inputText id="price" styleClass="form-control" a:placeholder="Price" value="#{auctionRequest.price}"/>
+                </div>
+                <div class="form-group">
+                    <h:selectOneMenu id="category" value="#{auctionRequest.category}" converter="omnifaces.SelectItemsConverter">
+                        <f:selectItems value="#{auctionController.allCategories}" var="category"
+                                       itemLabel="#{category.name}" itemValue="#{category}" />
+                    </h:selectOneMenu>
+                    <h:messages for="category" showSummary="true"/>
+                </div>
+                <div class="form-group">
+                    <h:inputText id="photo-link-1" styleClass="form-control" a:placeholder="Photo url" value="#{auctionRequest.photo1}"/>
+                    <h:messages for="photo-link-1" showSummary="true"/>
+                </div>
+                <div class="form-group">
+                    <h:inputText id="photo-link-2" styleClass="form-control" a:placeholder="Photo url" value="#{auctionRequest.photo2}"/>
+                    <h:messages for="photo-link-2" showSummary="true"/>
+                </div>
+                <div class="form-group">
+                    <h:inputText id="photo-link-3" styleClass="form-control" a:placeholder="Photo url" value="#{auctionRequest.photo3}"/>
+                    <h:messages for="photo-link-3" showSummary="true"/>
+                </div>
+                <h:commandButton id="save" styleClass="btn btn-primary" value="Create" action="#{auctionController.Create(auctionRequest)}">
+                    <f:param name="auctionId" value="#{auctionRequest.id}" />
+                </h:commandButton>
+                <br/>
+            </h:form>
+
+        </ui:define>
+    </ui:composition>
+</h:body>
+</html>

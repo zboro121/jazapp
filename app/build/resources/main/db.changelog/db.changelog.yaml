@@ -1,0 +1,22 @@
+databaseChangeLog:
+  - changeSet:
+      id: 20200601_init
+      author: Paweł Zborowski
+      sqlFile:
+        relativeToChangelogFile: true
+        splitStatements: false
+        path: 20200601_init.sql
+  - changeSet:
+      id: 20200719_auctions
+      author: Paweł Zborowski
+      sqlFile:
+        relativeToChangelogFile: true
+        splitStatements: false
+        path: 20200719_auctions.sql
+  - changeSet:
+      id: 20200909_auction-parameters
+      author: Paweł Zborowski
+      sqlFile:
+        relativeToChangelogFile: true
+        splitStatements: false
+        path: 20200909_auction-parameters.sql
